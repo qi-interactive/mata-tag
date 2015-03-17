@@ -3,38 +3,22 @@
 namespace mata\tag\behaviors;
 
 use Yii;
-use mata\tag\models\Category;
-use mata\tag\models\CategoryItem;
-use yii\helpers\Html;
+use mata\tag\models\Tag;
+use mata\tag\models\TagItem;
+use matacms\helpers\Html;
 use yii\helpers\ArrayHelper;
 
-class TagActiveFormBehavior extends  \yii\base\Behavior {
+class TagActiveFormBehavior extends \yii\base\Behavior {
 
 	public function tag($options = []) {
 
-		// $options = array_merge($this->owner->inputOptions, $options);
+		$options = array_merge($this->owner->inputOptions, $options);
 
-		// $this->owner->adjustLabelFor($options);
-		// $this->owner->labelOptions["label"] = "Category"; 
+		$this->owner->adjustLabelFor($options);
+		$this->owner->labelOptions["label"] = "Tags"; 
+		$this->owner->parts['{input}'] = Html::activeTagField($this->owner->model, $options);
 
-		// $items = ArrayHelper::map(Category::find()->grouping($this->owner->model)->all(), 'Id', 'Name');
-		// $value = CategoryItem::find()->forItem($this->owner->model)->one();
-
-		// if ($value != null)
-		// 	$options["value"] = $value->CategoryId;
-
-		// $options["name"] = CategoryItem::REQ_PARAM_CATEGORY_ID;
-
-		// $this->owner->autocomplete($items, $options);
-
-		// $grouping = isset($options["grouping"]) ?: Category::generateGroupingFromObject($this->owner->model);
-
-		// $this->owner->parts['{input}'] .= Html::activeHiddenInput($this->owner->model, $this->owner->attribute, [
-		// 	"name" => CategoryItem::REQ_PARAM_CATEGORY_GROUPING,
-		// 	"value" => $grouping
-		// 	]);
-
-		// return $this->owner;
+		return $this->owner;
 	}
 
 }
