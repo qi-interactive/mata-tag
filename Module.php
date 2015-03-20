@@ -25,4 +25,8 @@ class Module extends BaseModule {
 	public function getNavigation() {
 		return "/mata-cms/tag/tag";
 	}
+
+	public function canShowInNavigation() {
+		return false;
+	}
 }
