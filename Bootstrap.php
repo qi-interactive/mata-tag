@@ -53,8 +53,7 @@ class Bootstrap extends \mata\base\Bootstrap {
 			if ($tagModel == null) {
 				$tagModel = new Tag();
 				$tagModel->attributes = [
-					"Name" => $tag,
-					"URI" => urlencode($tag)
+					"Name" => $tag
 				];
 
 				if ($tagModel->save() == false)

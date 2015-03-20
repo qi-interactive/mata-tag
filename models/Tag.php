@@ -16,6 +16,17 @@ use yii\db\ActiveQuery;
  */
 class Tag extends \mata\db\ActiveRecord
 {
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => \yii\behaviors\SluggableBehavior::className(),
+                'slugAttribute' => 'URI',
+                'attribute' => 'Name'
+            ],
+        ];
+    }
     /**
      * @inheritdoc
      */
