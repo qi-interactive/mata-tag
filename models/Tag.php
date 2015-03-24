@@ -27,6 +27,10 @@ class Tag extends \mata\db\ActiveRecord
             ],
         ];
     }
+
+    public static function find() {
+        return new TagQuery(get_called_class());
+    }
     /**
      * @inheritdoc
      */
@@ -64,8 +68,21 @@ class Tag extends \mata\db\ActiveRecord
      */
     public function getTagItems()
     {
-        return $this->hasMany(MataTagitem::className(), ['TagId' => 'Id']);
+        return $this->hasMany(Tagitem::className(), ['TagId' => 'Id']);
     }
 
 }
 
+class TagQuery extends ActiveQuery {
+
+    public function init()
+    {
+        parent::init();
+    }
+
+    public function getActiveTags() {
+        $this->joinWith('tagItems', true, 'INNER JOIN');
+        return $this;
+    }
+
+}

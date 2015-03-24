@@ -3,6 +3,7 @@
 namespace mata\tag\models;
 
 use Yii;
+use yii\db\ActiveQuery;
 use mata\behaviors\IncrementalBehavior;
 
 /**
@@ -29,10 +30,9 @@ class TagItem extends \mata\db\ActiveRecord
         ];
     }
 
-
     public static function find() {
-        return parent::find()->orderBy('Order');
-  }
+        return new TagItemQuery(get_called_class());
+    }
 
     /**
      * @inheritdoc
@@ -73,4 +73,14 @@ class TagItem extends \mata\db\ActiveRecord
     {
         return $this->hasOne(Tag::className(), ['Id' => 'TagId']);
     }
+}
+
+class TagItemQuery extends ActiveQuery
+{
+    public function init()
+    {
+        parent::init();
+        $this->orderBy('Order ASC');
+    }
+
 }
