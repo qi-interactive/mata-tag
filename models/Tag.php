@@ -3,6 +3,7 @@
 namespace mata\tag\models;
 
 use Yii;
+use mata\tag\models\TagItem;
 use yii\db\ActiveQuery;
 
 /**
@@ -36,7 +37,7 @@ class Tag extends \mata\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'mata_tag';
+        return '{{%mata_tag}}';
     }
 
     /**
@@ -68,7 +69,7 @@ class Tag extends \mata\db\ActiveRecord
      */
     public function getTagItems()
     {
-        return $this->hasMany(Tagitem::className(), ['TagId' => 'Id']);
+        return $this->hasMany(TagItem::className(), ['TagId' => 'Id']);
     }
 
 }
