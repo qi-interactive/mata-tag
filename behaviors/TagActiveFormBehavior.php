@@ -12,6 +12,12 @@ class TagActiveFormBehavior extends \yii\base\Behavior {
 
 	public function tag($options = []) {
 
+		if(isset($this->owner->options['class'])) {
+		    $this->owner->options['class'] .= ' multi-choice-dropdown half-max-width-item';
+		} else {
+			$this->owner->options['class'] = ' multi-choice-dropdown half-max-width-item';
+		}
+
 		$options = array_merge($this->owner->inputOptions, $options);
 
 		$this->owner->adjustLabelFor($options);
