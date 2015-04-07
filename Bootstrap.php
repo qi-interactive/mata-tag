@@ -37,7 +37,7 @@ class Bootstrap extends \mata\base\Bootstrap {
 		if (empty($tags = Yii::$app->request->post(TagItem::REQ_PARAM_TAG_ID)))
 			return;
 
-		$documentId = $model->getDocumentId();
+		$documentId = $model->getDocumentId()->getId();
 
 
 		
