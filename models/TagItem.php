@@ -82,4 +82,13 @@ class TagItemQuery extends ActiveQuery
         $this->orderBy('Order ASC');
     }
 
+    public function forItem($item) {
+
+        if (is_object($item))
+            $item = $item->getDocumentId()->getId();
+
+        $this->andWhere(['DocumentId' => $item]);
+        return $this;
+    }
+
 }
