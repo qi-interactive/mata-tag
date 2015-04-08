@@ -49,8 +49,7 @@ class TagItem extends \mata\db\ActiveRecord
     {
         return [
         [['TagId', 'DocumentId', 'Order'], 'required'],
-        [['TagId', 'Order'], 'integer'],
-        [['DocumentId'], 'string', 'max' => 64]
+        [['TagId', 'Order'], 'integer']
         ];
     }
 
