@@ -22,7 +22,7 @@ class TagActiveFormBehavior extends \yii\base\Behavior {
 
 		$this->owner->adjustLabelFor($options);
 		$this->owner->labelOptions["label"] = "Tags"; 
-		$this->owner->parts['{input}'] = Html::activeTagField($this->owner->model, $options);
+		$this->owner->parts['{input}'] = Html::activeTagField($this->owner->model, $this->owner->attribute, $options);
 
 		return $this->owner;
 	}
