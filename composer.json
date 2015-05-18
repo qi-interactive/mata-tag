@@ -1,16 +1,13 @@
 {
     "name": "mata/mata-tag",
-    "description": "Manages categories for AR models",
+    "description": "Manages tags for Active Record models",
     "keywords": ["yii2", "mata-tag", "tags", "mata"],
     "type": "yii2-extension",
     "license": "MIT",
     "support": {
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "codeception/codeception": "*",
-        "yiisoft/yii2-codeception": "*",
-        "yiisoft/yii2-faker": "*"
     },
     "autoload": {
         "psr-4": {

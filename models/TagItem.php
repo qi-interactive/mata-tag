@@ -1,4 +1,10 @@
 <?php
+ 
+/**
+ * @link http://www.matacms.com/
+ * @copyright Copyright (c) 2015 Qi Interactive Limited
+ * @license http://www.matacms.com/license/
+ */
 
 namespace mata\tag\models;
 
@@ -34,17 +40,11 @@ class TagItem extends \mata\db\ActiveRecord
         return new TagItemQuery(get_called_class());
     }
 
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'mata_tagitem';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -54,9 +54,6 @@ class TagItem extends \mata\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -83,4 +80,16 @@ class TagItemQuery extends ActiveQuery
         $this->orderBy('Order ASC');
     }
 
+<<<<<<< Updated upstream
 }
+=======
+    public function forItem($item) {
+
+        if (is_object($item))
+            $item = $item->getDocumentId()->getId();
+
+        $this->andWhere(['DocumentId' => $item]);
+        return $this;
+    }
+}
+>>>>>>> Stashed changes

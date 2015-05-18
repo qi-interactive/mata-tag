@@ -1,4 +1,10 @@
 <?php
+ 
+/**
+ * @link http://www.matacms.com/
+ * @copyright Copyright (c) 2015 Qi Interactive Limited
+ * @license http://www.matacms.com/license/
+ */
 
 namespace mata\tag\models;
 
@@ -32,17 +38,12 @@ class Tag extends \mata\db\ActiveRecord
     public static function find() {
         return new TagQuery(get_called_class());
     }
-    /**
-     * @inheritdoc
-     */
+
     public static function tableName()
     {
         return '{{%mata_tag}}';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -52,9 +53,6 @@ class Tag extends \mata\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -85,5 +83,4 @@ class TagQuery extends ActiveQuery {
         $this->joinWith('tagItems', true, 'INNER JOIN');
         return $this;
     }
-
 }
