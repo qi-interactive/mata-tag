@@ -80,9 +80,6 @@ class TagItemQuery extends ActiveQuery
         $this->orderBy('Order ASC');
     }
 
-<<<<<<< Updated upstream
-}
-=======
     public function forItem($item) {
 
         if (is_object($item))
@@ -92,4 +89,3 @@ class TagItemQuery extends ActiveQuery
         return $this;
     }
 }
->>>>>>> Stashed changes
