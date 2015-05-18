@@ -23,7 +23,7 @@ Changelog
 
 ## 1.0.1-alpha, May 18, 2015
 
-- Bug fixes, occured due to a merge conflict.
+- Bug fixes, occurred due to a merge conflict.
 
 ## 1.0.0-alpha, May 18, 2015
 
