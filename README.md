@@ -21,9 +21,14 @@ php yii migrate/up --migrationPath=@vendor/mata/mata-tag/migrations
 Changelog
 ---------
 
+## 1.0.2-alpha, May 19, 2015
+
+- Fixed a typo in README.md
+- Bug fix
+
 ## 1.0.1-alpha, May 18, 2015
 
-- Bug fixes, occured due to a merge conflict.
+- Bug fixes, occurred due to a merge conflict.
 
 ## 1.0.0-alpha, May 18, 2015
 
