@@ -1,5 +1,5 @@
 <?php
- 
+
 /**
  * @link http://www.matacms.com/
  * @copyright Copyright (c) 2015 Qi Interactive Limited
@@ -36,6 +36,10 @@ class Bootstrap extends \mata\base\Bootstrap {
 			$this->processSave($event->getMessage());
 		});
 
+        Event::on(Controller::class, Controller::EVENT_MODEL_DELETED, function(\matacms\base\MessageEvent $event) {
+			$this->processDelete($event->getMessage());
+		});
+
 	}
 
 	private function processSave($model) {
@@ -46,7 +50,7 @@ class Bootstrap extends \mata\base\Bootstrap {
 		$documentId = $model->getDocumentId()->getId();
 
 
-		
+
 		TagItem::deleteAll([
 			"DocumentId" => $documentId
 			]);
@@ -79,5 +83,14 @@ class Bootstrap extends \mata\base\Bootstrap {
 		}
 
 
+	}
+
+    private function processDelete($model) {
+
+		$documentId = $model->getDocumentId()->getId();
+
+        TagItem::deleteAll([
+			"DocumentId" => $documentId
+			]);
 	}
 }
