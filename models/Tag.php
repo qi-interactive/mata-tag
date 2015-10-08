@@ -1,5 +1,5 @@
 <?php
- 
+
 /**
  * @link http://www.matacms.com/
  * @copyright Copyright (c) 2015 Qi Interactive Limited
@@ -28,7 +28,7 @@ class Tag extends \mata\db\ActiveRecord
     {
         return [
             [
-                'class' => \yii\behaviors\SluggableBehavior::className(),
+                'class' => \mata\behaviors\SluggableBehavior::className(),
                 'slugAttribute' => 'URI',
                 'attribute' => 'Name'
             ],
