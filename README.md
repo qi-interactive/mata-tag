@@ -21,6 +21,10 @@ php yii migrate/up --migrationPath=@vendor/mata/mata-tag/migrations
 Changelog
 ---------
 
+## 1.0.3.1-alpha, October 8, 2015
+
+- Replaced \yii\behaviors\SluggableBehavior with \mata\behaviors\SluggableBehavior
+
 ## 1.0.3-alpha, August 21, 2015
 
 - Added deletion of tags for removed document
