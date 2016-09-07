@@ -21,6 +21,11 @@ php yii migrate/up --migrationPath=@vendor/mata/mata-tag/migrations
 Changelog
 ---------
 
+
+## 1.0.3.2-alpha, September 7, 2016
+
+- Added migration (alter DocumentId from 64 to 128 characters)
+
 ## 1.0.3.1-alpha, October 8, 2015
 
 - Replaced \yii\behaviors\SluggableBehavior with \mata\behaviors\SluggableBehavior
